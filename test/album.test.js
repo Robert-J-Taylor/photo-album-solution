@@ -16,7 +16,7 @@ describe('Retrieve Album', () => {
 })
 describe('Alphabetical Sort', () => {
     it('should return a sorted array', (done) => {
-        
+
         let result = album.alphabeticalSort(mockData.alphabeticalSortBefore);
         result.then((result) => {
             expect(result[0].title).to.equal(mockData.alphabeticalSortAfter[0].title);
@@ -28,7 +28,7 @@ describe('Filter By ID', () => {
     it('should return an array of ID specified', (done) => {
         let albumID = 2;
         let body = mockData.filterSortBefore;
-        let result = album.filterAlbumsByID(2,body);
+        let result = album.filterAlbumsByID(2, body);
         result.then((result) => {
             expect(result.length).to.equal(2);
             expect(result[0].title).to.equal(mockData.filterSortAfter[0].title);

@@ -18,34 +18,34 @@ let retrieveAlbums = (() => {
 })
 
 let processAlbumPromises = (albumID, sort) => {
-    return new Promise((resolve)=>{
-         retrieveAlbums(albumID, sort)
-        .then((result, errHandler) => {
-            if (albumID !== 0 && sort === 'yes') {
-                 filterAlbumsByID(albumID, result)
-                .then((result, errHandler) => {
-                     alphabeticalSort(result)
-                    .then((result, errHandler) => {
-                        resolve(result);
-                    }, errHandler)
-                }, errHandler)
-            } else if (albumID !== 0 && sort === 'no') {
-                 filterAlbumsByID(albumID, result)
-                .then((result, errHandler) => {
+    return new Promise((resolve) => {
+        retrieveAlbums(albumID, sort)
+            .then((result, errHandler) => {
+                if (albumID !== 0 && sort === 'yes') {
+                    filterAlbumsByID(albumID, result)
+                        .then((result, errHandler) => {
+                            alphabeticalSort(result)
+                                .then((result, errHandler) => {
+                                    resolve(result);
+                                }, errHandler)
+                        }, errHandler)
+                } else if (albumID !== 0 && sort === 'no') {
+                    filterAlbumsByID(albumID, result)
+                        .then((result, errHandler) => {
+                            resolve(result);
+                        }, errHandler)
+                } else if (albumID === 0 && sort === 'yes') {
+                    alphabeticalSort(result)
+                        .then((result, errHandler) => {
+                            resolve(result);
+                        }, errHandler)
+
+                } else {
                     resolve(result);
-                }, errHandler)
-            } else if (albumID === 0 && sort === 'yes') {
-                 alphabeticalSort(result)
-                .then((result, errHandler) => {
-                    resolve(result);
-                }, errHandler)
-    
-            } else  {
-                resolve(result);
-            } 
-        }, errHandler)
+                }
+            }, errHandler)
     })
- 
+
 }
 
 let errHandler = (err) => {
