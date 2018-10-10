@@ -1,0 +1,19 @@
+{
+  "name": "photo-album",
+  "version": "1.0.0",
+  "description": "LT Technical showcase: Photo album",
+  "main": "app.js",
+  "scripts": {
+    "test": "mocha **/*.test.js"
+  },
+  "author": "Robert Taylor",
+  "license": "ISC",
+  "dependencies": {
+    "request": "^2.88.0",
+    "yargs": "^12.0.2"
+  },
+  "devDependencies": {
+    "chai": "^4.2.0",
+    "mocha": "^3.5.3"
+  }
+}
