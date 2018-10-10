@@ -50,7 +50,8 @@ npm test
 
 ### Author
 Robert Taylor
+
 If you have questions or have issues running the project, send a message to my email:
-Email: robtaylor3012@gmail.com
+robtaylor3012@gmail.com
 
 
